@@ -9,32 +9,34 @@ router.get('/', (req, res) => {
   res.render('view')
 } )
 
-router.get('/login', (req, res)=>{
+router.get('/index', (req, res) => {
+  res.render('index')
+} )
+
+router.get('/login', (req, res) => {
   res.render('login')
-})
+} )
 
 
-
-router.post('/login', function(req,res, next) {
+router.post('/login', (req,res) =>{
   let user = req.body.user
   let pass = req.body.pass
-  if (user == process.env.username && pass == process.env.clave ) {
-    res.render('/administrar');
-  
+  if (user == process.env.usuario && pass == process.env.contrasena) {
+    res.render('administrar')
   } else {
-    res.render('login', { error: 'Datos Incorrectos'});
+   res.render('login', { error: 'Datos incorrectos' });
   }
 })
 
-//index
-router.get('/index', (req, res) => {
+//productos
+router.get('/productos', (req, res) => {
   db.getproducto()
     .then(data => {        
       console.log(data)
-      res.render('index', { producto: data });
+      res.render('productos', { producto: data });
   })
   .catch(err => {
-      res.render('index', { producto: [] });
+      res.render('productos', { producto: [] });
   })
 
   
@@ -82,12 +84,12 @@ router.get('/insert', (req, res) => {
 } )
 
 
-router.post('/insert', (req, res) => {
-  const {code, name, brand, model, description, price, category_id} = req.body;
-  console.log(code, name, brand, model, description, price, category_id);
-  db.insertproducto(code, name,brand,model,description,price,category_id)
+router.post('/inserto', (req, res) => {
+  const {code, name, lab, quantity, description, price, category_id} = req.body;
+  console.log(code, name, lab, quantity, description, price, category_id);
+  db.insertproducto(code, name,lab,quantity,description,price,category_id)
   .then(() => {
-     res.redirect('index')
+     res.redirect('productos')
   })
   .catch(err => {
     console.log(err);
@@ -122,10 +124,10 @@ router.post('/insertima', (req, res) => {
 
 //editar producto
 router.post('/edit/', (req, res)=>{
-  const {id, code, name, brand, model, description, price, category_id,} = req.body;
-  db.updateproducto(id, code, name, brand, model, description, price, category_id)
+  const {id, code, name, lab, quantity, description, price, category_id,} = req.body;
+  db.updateproducto(id, code, name, lab, quantity, description, price, category_id)
   .then(() =>{
-    res.redirect('/index');
+    res.redirect('/productos');
   })
   .catch(err =>{
     console.log(err);
@@ -170,7 +172,7 @@ router.get('/edit/:id', (req, res)=>{
   })
     .catch(err =>{
       console.log(err);
-      res.render('edit', {producto: []})
+      res.render('edit_producto', {producto: []})
     }) 
 
 
@@ -213,7 +215,7 @@ router.get('/delete/:id', (req, res)=>{
   const id = req.params.id;
   db.deleteproducto(id)
     .then(() => {
-    res.redirect('/index');
+    res.redirect('/productos');
   })
   .catch(err => {
   console.log(err);
@@ -225,7 +227,7 @@ router.get('/administrar', (req, res) =>{
 })
 
 router.get('/tabcategory', (req, res) =>{
-  res.render('tabcategory')
+  res.render('tabategory')
 })
 
 router.get('/deletecat/:id', (req, res)=>{
@@ -254,4 +256,3 @@ router.get('/deleteima/:id', (req, res)=>{
 
 
 module.exports = router;
-
