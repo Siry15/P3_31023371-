@@ -22,7 +22,7 @@ router.post('/login', (req,res) =>{
   let user = req.body.user
   let pass = req.body.pass
   if (user == process.env.usuario && pass == process.env.contrasena) {
-    res.render('administrar')
+    res.render('administar')
   } else {
    res.render('login', { error: 'Datos incorrectos' });
   }
@@ -84,7 +84,7 @@ router.get('/insert', (req, res) => {
 } )
 
 
-router.post('/inserto', (req, res) => {
+router.post('/insert', (req, res) => {
   const {code, name, lab, quantity, description, price, category_id} = req.body;
   console.log(code, name, lab, quantity, description, price, category_id);
   db.insertproducto(code, name,lab,quantity,description,price,category_id)
@@ -172,7 +172,7 @@ router.get('/edit/:id', (req, res)=>{
   })
     .catch(err =>{
       console.log(err);
-      res.render('edit_producto', {producto: []})
+      res.render('edit', {producto: []})
     }) 
 
 
@@ -222,12 +222,12 @@ router.get('/delete/:id', (req, res)=>{
   });
 })
 
-router.get('/administrar', (req, res) =>{
-  res.render('administrar')
+router.get('/administar', (req, res) =>{
+  res.render('administar')
 })
 
-router.get('/tabcategory', (req, res) =>{
-  res.render('tabategory')
+router.get('/categorias', (req, res) =>{
+  res.render('tabcategory')
 })
 
 router.get('/deletecat/:id', (req, res)=>{
