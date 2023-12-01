@@ -3,22 +3,12 @@ var router = express.Router();
 const db = require('../db/models');
 require('dotenv').config()
 
+//login
+router.get('/',(req, res)=>{
+  res.render ('login')
+})
 
-
-router.get('/', (req, res) => {
-  res.render('view')
-} )
-
-router.get('/index', (req, res) => {
-  res.render('index')
-} )
-
-router.get('/login', (req, res) => {
-  res.render('login')
-} )
-
-
-router.post('/login', (req,res) =>{
+router.post('/login', (req, res) =>{
   let user = req.body.user
   let pass = req.body.pass
   if (user == process.env.usuario && pass == process.env.contrasena) {
@@ -28,15 +18,15 @@ router.post('/login', (req,res) =>{
   }
 })
 
-//productos
-router.get('/productos', (req, res) => {
+//index
+router.get('/index', (req, res) => {
   db.getproducto()
     .then(data => {        
       console.log(data)
-      res.render('productos', { producto: data });
+      res.render('index', { producto: data });
   })
   .catch(err => {
-      res.render('productos', { producto: [] });
+      res.render('index', { producto: [] });
   })
 
   
@@ -85,11 +75,11 @@ router.get('/insert', (req, res) => {
 
 
 router.post('/insert', (req, res) => {
-  const {code, name, lab, quantity, description, price, category_id} = req.body;
-  console.log(code, name, lab, quantity, description, price, category_id);
-  db.insertproducto(code, name,lab,quantity,description,price,category_id)
+  const {code, name, brand, model, description, price, category_id} = req.body;
+  console.log(code, name, brand, model, description, price, category_id);
+  db.insertproducto(code, name,brand,model,description,price,category_id)
   .then(() => {
-     res.redirect('productos')
+     res.redirect('index')
   })
   .catch(err => {
     console.log(err);
@@ -127,7 +117,7 @@ router.post('/edit/', (req, res)=>{
   const {id, code, name, lab, quantity, description, price, category_id,} = req.body;
   db.updateproducto(id, code, name, lab, quantity, description, price, category_id)
   .then(() =>{
-    res.redirect('/productos');
+    res.redirect('/index');
   })
   .catch(err =>{
     console.log(err);
@@ -215,7 +205,7 @@ router.get('/delete/:id', (req, res)=>{
   const id = req.params.id;
   db.deleteproducto(id)
     .then(() => {
-    res.redirect('/productos');
+    res.redirect('/index');
   })
   .catch(err => {
   console.log(err);

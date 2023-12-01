@@ -3,101 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title> 
   <style>
-    *,
-*:before,
-*:after{
-    padding: 0%;
-    margin: 0%;
-    box-sizing: border-box;
-}
-
 body{
-    background-color: #1c1a21;
+	background-image:url(https://media.istockphoto.com/id/1174598609/es/foto/conjunto-de-electrodom%C3%A9sticos-contempor%C3%A1neos-aislados-en-blanco.jpg?s=612x612&w=0&k=20&c=3M_f_azyvD1F9LX8WTgJ3FD5jLSEKMhTWfNgDQHbNe0=);
+	background-size:cover;
+	background-attachment: fixed;
 }
-.background{
-    width: 430px;
-    height: 520px;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    left: 50%;
-    top: 50%;
-}
-form{
-    height: 520px;
-    width: 400px;
-    background-color: rgb(206, 50, 180);
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    border:2px solid rgba(255, 255, 255, 0.1);
-    box-shadow:0 0 40px rgba(8, 7, 16, 0.6) ;
-    padding: 50px 35px;
-}
-form *{
-    font-family: 'Poppins',sans-serif;
-    color: #ffffff;
-    letter-spacing: 0.5px;
-    outline: none;
-    border: none;
-}
-form h3{
-    font-size: 32px;
-    font-weight: 500;
-    line-height: 42px;
-    text-align: center;
+#login{
+	display:flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items:center;
+	background:rgba(147, 164, 255, 0.7);
+	width:90%;
+	max-width: 400px;
+	height:auto;
+	margin:50px auto;
+	border-radius:10px 10px 10px 10px;
+	padding: 20px;
 }
 label{
-    display: block;
-    margin-top: 30px;
-    font-size: 16px;
-    font-weight: 500;
+    text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	color:rgba(1, 0, 2, 0.87);
+}
+h1{
+	text-align:center;
+	font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+}
+form{
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 input{
-    display: block;
-    height: 50px;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.07);
-    border-radius: 3px;
-    padding: 0 10px;
-    margin-top: 8px;
-    font-size: 14px;
-    font-weight: 300;
+padding:8px;
+border-radius:10px 10px 10px 10px;
 }
-::placeholder{
-    color: #e5e5e5;
+#iniciar{
+	margin-top:10px;
+	padding: 7px;
+	border-radius:10px 10px 10px 10px;
 }
-button{
-    margin-top: 50px;
-    width: 100%;
-    background-color: #ffffff;
-    color: #000000;
-    padding: 15px 0;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 5px;
-    cursor: pointer;
-}
-  </style>>
-  <title>Login</title>
+  </style>
 </head>
 <body>
-  
-  <div class="background">
-      <div class="shape"></div>
-      <div class="shape"></div>
-  </div>
-
-  <form action="/login" method="post">
-    <h3>Inicio</h3>
-    <label for="username">Nombre de Usuario</label>
+  <table>
+    <h1 class="login">Inicio de Sesión de Administrador</h1>
+    <div id="login">
+    <form action="/login" method="post">
+    <label for="username">Usuario</label>
     <input type="text" placeholder="Usuario" name="user" value="" required>
     <label for="password" required>Contraseña</label>
     <input type="password" placeholder="Contraseña" name="pass" value="" required>
     <button type="submit" value="Login" required>Iniciar Sesión</button>
   </form>
+  </div>
+</table>
 </body>
 </html>
