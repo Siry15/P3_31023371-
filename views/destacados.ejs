@@ -597,8 +597,11 @@
   color: #878787;
   }
   .copyright-text p a{
-  color: #a4acf8;
+  color: #0a1cbd;
   text-decoration: none;
+  border: 1px solid rgb(253, 252, 252);
+  box-shadow: #000000;
+  padding: 10px;
   }
   .footer-menu li {
   display: inline-block;
@@ -609,8 +612,11 @@
   }
   .footer-menu li a {
   font-size: 14px;
-  color: #878787;
+  color: #1515f8;
   text-decoration: none;
+  border: 1px solid #ffffff;
+  box-shadow: #000000;
+  padding: 10px;
   }
   .row-footer {
     display: -ms-flexbox;
@@ -778,7 +784,6 @@
                
                 <p>Modelo: <small class="precio"><%= product.model %></small></p>
                 <p>Precio: USD.<small class="precio"><%= product.price %></small></p>
-                
               <% imagen.forEach(foto => { %>
               <% if(product.id == foto.producto_id) { %>
                 <div class="contenedor-imagen">
