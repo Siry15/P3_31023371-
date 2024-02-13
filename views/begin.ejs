@@ -17,53 +17,34 @@
             <li><a href="/sesion">Puntuar</a></li>
             <li><a href="/nosotros">Nosotros</a></li>
   
-            <li>Renueva tu casa con los mejores electrodomesticos de Linea Blanca</li>
+            <li>renueva tu hogar desde cualquier parte del mundo con Linea Blanca/li>
           </ul>
         </nav>
       </div>
     </header>
 
     <div class="container-contacto">
-  
+   
 
-        <form action="/compra" id="form" method="post">
-          <h2>Compra</h2>
+        <form action="/begin" id="form" method="post">
+          <h2>Iniciar sesion</h2>
           <br>
-      
-          <label for="producto">Seleccione el producto</label>
-          <br>
-          <select id="categoria" name="producto_id" required>
-            <% producto.forEach(producto => { %>
-              <option value="<%= producto.id %>"><%= producto.name %> <%= producto.price %></option>
-            <% }) %>
-          </select>
-      
-          <br>
-      <br>
-          <label for="client">Seleccione el cliente</label>
-          <br>
-          <select id="categoria" name="cliente_id" required>
-            <% client.forEach(client => { %>
-              <option value="<%= client.id %>"><%= client.email %></option>
-            <% }) %>
-          </select>
-      
-      
-      
-          <br>
-      
-         
-      
-      <br>
-          <label for="cantidad">Indique la cantidad</label>
-          <input type="number" placeholder="Cantidad" name="cantidad" value="" required>
+          <label for="email">Correo electronico</label>
+          <input type="email" name="email" value="" placeholder="Email" required>
       
           
-          <input type="submit" id="button-contacto" value="Comprar" class="button">
+          <label for="password" required>Contraseña</label>
+          <input type="password" name="pass" value="" placeholder="Contraseña" required>
+          
+          <input type="submit" id="button-contacto" value="ENVIAR" class="button" href="/client">
+          
+              
+         
         </form>
       
+       
+      
         </div>
-
 
   <footer class="footer-section">
     <div class="copyright-area">
@@ -71,7 +52,7 @@
             <div class="row-footer">
                 <div class="col-xl-6 col-lg-6 text-center text-lg-left">
                     <div class="copyright-text">
-                        <p>Copyright &copy; 2023, todos los derechos reservados <a href="/">Linea Blanca</a></p>
+                        <p>Copyright &copy; 2023, todos los derechos reservados <a href="/">LINEA BLANCA</a></p>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">

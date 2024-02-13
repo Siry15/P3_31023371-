@@ -9,7 +9,7 @@
   <body>
     <header>
       <div class="menu logo-nav">
-        <a href="/" class="logo">Vitality</a>
+        <a href="/" class="logo">LINEA BLANCA</a>
         <label class="menu-icon"><span class="fas fa-bars icomin"></span></label>
         <nav class="navigation">
           <ul>
@@ -26,50 +26,68 @@
 
 
 
-    <main>
- 
-        <div class="container1">
-            <div class="columna3">
-              <h2>Nombre</h2><p><%= producto.name %></p><br>
-              <h2>Codigo</h2><p><%= producto.code %></p><br>
-              <h2>Laboratorio</h2><p><%= producto.lab %></p><br>
-              <h2>Descripcion</h2><p><%= producto.description %></p><br>
-              
-             
-              
-            </div>
-            <div class="columna4">
-              <h2>Cantidad</h2><p><%= producto.quantity %></p><br>
-                <h2>Precio</h2><p><%= producto.price %></p>
-                <h2>Puntuacion promedio</h2><p><%= promedio %></p>
-    
-                <% imagen.forEach(foto => { %>
-                  <% if(producto.id == foto.producto_id) { %>
-                    <div class="contenedor-imagen">
-                      <img src="<%=foto.url%>">
-                  </div>
-                  <% } else { %>
-                     <p></p>
-                  <% }%>
-                  <% }); %>
-    
-               
-    
-                
-                    <a href="/begin" class="button"> Comprar</a>
-               
-            </div>
+
+    <main> 
+        <div class="contenedor">
+          <a href="/listado" class="button"> Ver en lista</a> 
         </div>
-        
-             
-            
-    </main>
-   
+         
+      
+              <div class="modal" id="modal">
+                <div class="modal-content">
+                  <img src="" alt="" class="modal-img" id="modal-img">
+                </div>
+                <div class="modal-boton" id="modal-boton">X</div>
+              </div>
+      
+              <div class="container-productos" id="lista-productos">
+      
+                  <% producto.forEach(product => { %>
+                    <tr>
+                      <div class="card">
+                      
+                      <h2><a href="/producto/<%=product.id%>"><%= product.name %></a></h2>
+                     
+                      <p>Laboratorio: <small class="precio"><%= product.lab %></small></p>
+                      <p>Precio: USD.<small class="precio"><%= product.price %></small></p>
+                      <p>Cantidad: <small class="precio"><%= product.quantity %></small></p><br>
+                    <% imagen.forEach(foto => { %>
+                    <% if(product.id == foto.producto_id) { %>
+                      <div class="contenedor-imagen">
+                        <img src="<%=foto.url%>">
+                    </div>
+                    <% } else { %>
+                       <p></p>
+                    <% }%>
+                    <% }); %>
+      
+      
+      
+      
+                    </div>
+                    <% }); %></td>
+              
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+               
+              </div>
+      </main>
 
 
 
 
-  <footer class="footer-section">
+
+  <footer class="footer-section1">
     <div class="copyright-area">
         <div class="container-footer">
             <div class="row-footer">
