@@ -3,20 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vitality.com</title>
+    <title>LINEABLANCA.com</title>
     <link href="/stylesheets/styles1.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <header>
       <div class="menu logo-nav">
-        <a href="/" class="logo">Vitality</a>
+        <a href="/" class="logo">LINEA BLANCA</a>
         <label class="menu-icon"><span class="fas fa-bars icomin"></span></label>
         <nav class="navigation">
           <ul>
-            <li><a href="/cuadricula">Productos</a></li>
-            <li><a href="/sesion">Puntuar</a></li>
-            <li><a href="/nosotros">Nosotros</a></li>
-            <li>Renueva tu casa desde cualquier parte del mundo con Linea Blanca</li>
+            
           </ul>
         </nav>
       </div>
@@ -40,7 +37,6 @@
                 <th>Código</th>
                 <th>Nombre</th>
                 <th>Cantidad</th>
-                <th>Laboratorio</th>
                 <th>Descripción</th>
                 <th>Precio</th> 
                 <th>Puntuacion</th>
@@ -55,7 +51,6 @@
                       <td><%= product.code %></td> 
                       <td><a href="/producto/<%=product.id%>"><%= product.name %></a></td>
                       <td><%= product.quantity %></td>
-                      <td><%= product.lab %></td>
                       <td><%= product.description %></td>
                       <td><%= product.price %></td>
                       <td>
