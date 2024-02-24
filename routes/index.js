@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const db = require('../db/models');
 require('dotenv').config()
-const IP = require ('ip');
+const IP = require ('IP');
 const { body, validationResult } = require('express-validator');
 const { v4: uuidv4 } = require('uuid');
 const jwt = require('jsonwebtoken');
