@@ -1,5 +1,5 @@
 {
-  "name": "tank4",
+  "name": "tank3",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -12,16 +12,19 @@
     "dotenv": "^16.4.5",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
-    "express-generator": "^4.16.1",
+    "express-validator": "^7.0.1",
     "http-errors": "~1.6.3",
+    "ip": "^2.0.1",
     "jade": "^1.11.0",
     "jsonwebtoken": "^9.0.2",
     "morgan": "~1.9.1",
     "nodemailer": "^6.9.10",
-    "nodemon": "^3.1.0",
     "request": "^2.88.2",
     "sqlite": "^5.1.1",
     "sqlite3": "^5.1.7",
     "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
   }
 }

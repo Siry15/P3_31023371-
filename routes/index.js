@@ -159,7 +159,7 @@ router.post('/client', (req, res) => {
     //Lista de correos 
     to: [email],
     subject: 'Task 4: Additional features ',
-    text: "Bienvenido, se ha registrado exitosamente en Vitality.com"
+    text: "Bienvenido, se ha registrado exitosamente en LINEABLANCA.com"
   };
 
   transporter.sendMail(mailOptions, function(error, info){
