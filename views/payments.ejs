@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +13,7 @@
       <label class="menu-icon"><span class="fas fa-bars icomin"></span></label>
       <nav class="navigation">
         <ul>
-      
+        
         </ul>
       </nav>
     </div>
@@ -24,17 +22,49 @@
   <div class="container-contacto">
   
 
-  <form action="/login" id="form" method="post">
-    <h2>Inicio</h2>
+  <form action="/" id="form" method="post">
+    <h2>Pagar</h2>
     <br>
-    <label for="username">Nombre de Usuario</label>
-  
-    <input type="text" placeholder="Usuario" name="user" value="" required>
 
-    <label for="password" required>Contraseña</label>
-    <input type="password" placeholder="Contraseña" name="pass" value="" required>
+    <label for="full-name">Nombre completo</label>
+    <input type="text" placeholder="Nombre" name="full-name" value="" required>
+
+    <br>
     
-    <input type="submit" id="button-contacto" value="ENVIAR" class="button">
+    <label for="card-number">Numero de tarjeta</label>
+    <input type="text" placeholder="tarjeta" name="card-number" value="" required>
+
+    <br>
+
+    <label for="expiration-month">Mes de expiracion</label>
+    <input type="text" placeholder="Mes" name="expiration-month" value="" required>
+
+    <br>
+   
+    <label for="expiration-year">Año de expiracion</label>
+    <input type="text" placeholder="Año" name="expiration-year" value="" required>
+
+    <br>
+    
+    <label for="cvv">Cedula</label>
+    <input type="text" placeholder="Cedula" name="cvv" value="" required>
+
+    <br>
+
+    <label for="amount">Monto a Pagar</label>
+    <input type="text" placeholder="Monto" name="amount" value="" required>
+   
+    <br>
+    <label for="currency">Indique la moneda</label>
+    <input type="text" placeholder="moneda" name="currency" value="" required>
+
+    <br>
+
+    <label for="description">Descripcion</label>
+    <input type="text" placeholder="descripcion" name="description" value="" required>
+
+    <br>
+    <input type="submit" id="button-contacto" value="Pagar" class="button">
   </form>
 
   </div>
@@ -63,11 +93,6 @@
       </div>
     </footer>  
 
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script  src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-    <script  src="assets/js/scripts.js"></script>
-    <script  src="assets/js/contacto.js"></script>
+    
 </body>
 </html>
